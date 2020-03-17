@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="nl">
+    <head>
+        <meta http-equiv="Content-Type"
+              content="text/html";
+              charset="UTF-8">
+    </head>
+    <body>
+        <script>
+            var vraag = "Kies een nummer onder de 10?"
+            var antwoord = Math.random(1, 11); 
+            var goed = "<h2> Prima, ga zo door! </h2>"
+            var fout = "<h2> Jammer, volgende keer beter !</h2>"
+            var antwoordGebruiker = prompt(vraag)
+
+            if (antwoordGebruiker == antwoord) {
+                document.write(goed)
+            } 
+            else {
+                document.write(fout)
+            }
+        </script>
+    </body>
+</html>

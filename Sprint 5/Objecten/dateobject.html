@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="nl">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html"
+              charset="8">
+              <title>Date Object</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+        var vandaag = new Date()
+        document.write("<br>Opgave 46: " + vandaag)
+        var eenDag = 86400000
+        var morgen = new Date(nu + eenDag)
+        document.write("<br>Opgave 47: de datum morgen is: " + morgen)
+        // datum met date string
+        var schooljaar = new Date("2019-09-02")
+        // datum met datum en tijd string
+        var wintertijd = new Date("2019-10-27T03:00:00")
+        document.write("<br>Opgave 48: Begin wintertijd is: " + wintertijd)
+        var geboorteDatum = new Date("2003-07-14T10:01:00")
+        document.write("<br>Geboortedatum is : " + geboorteDatum)
+        nu = Date.now()
+        document.write("<br>Opgave 50: Nu: " + nu)
+        var dagen = ((nu - beginSchooldag) / eenDag)
+        document.write("<br>Aantal dagen sinds begin schooldag : " + dagen.toFixed(0))
+        </script>
+    </body>
+</html>

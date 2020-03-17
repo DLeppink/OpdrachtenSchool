@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="nl">
+    <head>
+        <meta http-equiv="Content-Type"
+              content="text/html";
+              charset="UTF-8">
+              <title>Array methode</title>
+    </head>
+    <body>
+        <script>
+            var studenten = new array ("Zakaria", "Albert", "Hamsa", "Mike", "Pieter")
+            document.write("<br>Opgave 24: Studenten: " + studenten)
+
+            team = studenten
+            document.write("<br>Opgave 25: Team " + team)
+
+            team [0] = "Unut"
+            document.write("<br>Opgave 26: Element [0] is gewijzigd " + studenten)
+
+            studenten.shift()
+            document.write("<br>Opgave 27: resultaat van shift: " + studenten)
+
+            studenten.unshift("Jozef", "Unut")
+            document.write("<br>Opgave 28: resultaat van unshift: " + studenten)
+
+            studenten.pop()
+            document.write("<br>Opgave 29: resultaat van pop: " + studenten)
+
+            studenten.push("Pieter", "David")
+            document.write("<br>Opgave 30: resultaat van push: " + studenten)
+
+            klas = studenten.splice(2, 4)
+            document.write("<br>Opgave 31: resultaat<br>studenten: " + studenten + "<br>klas: " + klas)
+
+            studenten.sort()
+            document.write("<br>Opgave 32: resultaat van sort: " + studenten)
+
+            studenten.reverse()
+            document.write("<br>Opgave 33: resultaat van reverse " + klas)
+
+            index = studenten.indexOf("Jozef")
+            document.write("<br>Opgave 34: resultaat van indexOf Jozef: " + index)
+
+            delete klas[2]
+            document.write("<br>Opgave 35: resultaat van delete: " + klas)
+
+            document.write("<br>Opgave 36: Datatype van gedelete element: " + typeof klas[2])
+
+            klas.splice(2, 1)
+            document.write("<br>Opgave 37: Element volledig verwijdert: " + klas)
+
+            index = studenten.indexOf("Jozef")
+            studenten.splice(index, 1)
+            document.write("<br>Opgave 38: Specifieke student verwijdert: " + studenten)
+
+            klas2 = klas.slice()
+            document.write("<br>Opgave 39: Resultaat van kopieeren: " + klas2)
+
+            var myString = klas.join("|")
+            document.write("<br>Opgave 40: Resultaat van join: " + myString)
+
+            var myArray = myString.split("|")
+            document.write("<br>Opgave 41: Resultaat van split: " + myArray)
+        </script>
+    </body>
+</html>

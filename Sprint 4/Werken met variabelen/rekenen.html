@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="nl">
+    <head>
+        <meta http-equiv="Content-Type"
+              content="text/html";
+              charset="UTF-8">
+    </head>
+    <body>
+        <script>
+            getal1 = parseInt(prompt("Vul hier getal 1 in"))
+            getal2 = parseInt(prompt("Vul hier getal 2 in"))
+            somSoort = prompt("Vul hier plus, min, maal of delen in")
+            if (somSoort == "plus") {
+                uitkomst = getal1 + getal2
+                document.write(uitkomst)
+            }
+            else if (somSoort == "min") {
+                uitkomst = getal1 - getal2
+                document.write(uitkomst)
+            }
+            else if (somSoort == "maal") {
+                uitkomst = getal1 * getal2
+                document.write(uitkomst)
+            }
+            else if (somSoort == "delen") {
+                uitkomst = getal1 / getal2
+                document.write(uitkomst)
+            }
+        </script>
+    </body>
+</html>

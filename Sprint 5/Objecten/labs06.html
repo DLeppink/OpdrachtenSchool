@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="nl">
+    <head>
+        <meta http-equiv="Content-Type"
+              content="text/html";
+              charset="UTF-8">
+    </head>
+    <body>
+        <h2>Lab 06</h2>
+        <h3>Factuur</h3>
+        <script>
+            var klantnaam = prompt("voer je eigen naam in")
+            var aantal = parseInt(prompt("aantal boeken te bestellen?"))
+            var titel = "Javascript"
+            var prijs = 29.90
+            var bedrag = aantal * prijs
+            var btw = (bedrag / 100) * 6
+            var totaalBedrag = bedrag + btw
+            var factuurDatum = Date.now()
+            var dag = 86400000
+            var betaalDatum = new Date(factuurDatum + (dag * 5))
+            document.write("<br>Factuurdatum: " + factuurDatum)
+            document.write("<br>Betaaldatum is: " + betaalDatum)
+            document.write("<br>Bedankt voor je bestelling: " + klantnaam)
+            document.write("<br>Boektitel is: " + titel)
+            document.write("<br>Aantel te bestellen: " + aantal)
+            document.write("<br>Prijs per boek is: " + prijs.toFixed(2))
+            document.write("<br>Bedrag is: " + bedrag)
+            document.write("<br>BTW is: " + btw)
+            document.write("<br>Totaal inclusief BTW is: " + totaalBedrag)
+        </script>
+    </body>
+</html>

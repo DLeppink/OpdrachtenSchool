@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="nl">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html"
+              charset="8">
+              <title>Date methods</title>
+    </head>
+    <body>
+        <script>
+            palet = new Array("Groen", "Blauw", "Cyan", "Lime", "Roze")
+            document.write("<br>Palet is nu: " + palet)
+            var nieuwekleur = prompt("Typ een nieuwe kleur in: ")
+            palet.push(nieuwekleur)
+            document.write("<br>Palet is nu: " + palet)
+            var nieuwekleur = prompt("Typ een nieuwe kleur in: ")
+            palet.unshift(nieuwekleur)
+            document.write("<br>Palet is nu: " + palet)
+            palet.sort()
+            document.write("<br>Palet is nu: " + palet)
+            var palet1 = palet.slice(2)
+            var palet2 = palet.slice(0, 3)
+            document.write("<br>Palet is nu: " + palet1)
+            document.write("<br>Palet is nu: " + palet2)
+            palet3 = palet
+            document.write("<br>Palet is nu: " + palet3)
+        </script>
+    </body>
+</html>

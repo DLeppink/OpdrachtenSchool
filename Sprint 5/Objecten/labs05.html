@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="nl">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html"
+              charset="8">
+              <title>Date methods</title>
+    </head>
+    <body>
+        <script>
+            einddatum = prompt("Wat is de einddatum JJJJ-MM-DD?")
+            var deadline = new Date(einddatum)
+            document.write("<br>Deadline is: " + deadline)
+            var nu = Date.now()
+            var dag = 86400000
+            var resterende = (deadline - nu) / dag
+            document.write("<br>Er zijn nog: " + resterende.toFixed(0) + " Dagen te gaan!")
+        </script>
+    </body>
+</html>

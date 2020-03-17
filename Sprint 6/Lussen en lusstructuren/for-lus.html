@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+	<meta http-equiv="Content-Type"
+		content="text/html
+        charset=UTF-8">
+        <title>De for-lus</title>
+        <!-- dit script: werkt met de for-lus -->
+</head>
+<body>
+    <script>
+        for (x = 0; x < 3; x++) {
+            document.write("<br>Dit is lus: " + x)
+        }
+
+        var student = new Array("Zakaria", "Albert", "Hansa", "Mike", "Pieter", "Harry")
+        for(x=0; x < student.length; x++) {
+            document.write("<br>Element " + x + " is " + student[x])
+        }
+
+        var student = new Array("Zakaria", "Albert", "Hansa", "Mike", "Pieter", "Harry")
+        for(x=0; x < student.length; x+=2) {
+            document.write("<br>Element " + x + " is " + student[x])
+        }
+
+        var tekst = "Hij lijkt een beetje op Nelson Mandela."
+        spaties = 0
+        document.write("<br>")
+        for(x = 0; x < length; x++) {
+            teken = tekst.charAt(x)
+            document.write(teken)
+            if (teken == " ") {
+                spaties++ 
+            }
+        }
+        document.write("<br>De tekst bevat" + spaties + " spaties<br>")
+
+        aA = 0
+        aE = 0
+        aI = 0
+        aO = 0
+        aU = 0
+        for(x = 0; x < length; x++) {
+            teken = tekst.charAt(x)
+            document.write(teken)
+            if (teken == "a") {
+                aA++ 
+            }
+            if (teken == "e") {
+                aE++ 
+            }
+            if (teken == "i") {
+                aI++ 
+            }
+            if (teken == "o") {
+                aO++ 
+            }
+            if (teken == "u") {
+                aU++ 
+            }
+        }
+
+        document.write("Aantal a's: " + aA)
+        document.write("Aantal e's: " + aE)
+        document.write("Aantal i's: " + aI)
+        document.write("Aantal o's: " + aO)
+        document.write("Aantal u's: " + aU)
+    </script>
+</body>
+</html>
