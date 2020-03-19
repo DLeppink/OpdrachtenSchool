@@ -1,0 +1,181 @@
+CREATE TABLE DOCENT 
+    (
+     Code CHAR (5) NOT NULL , 
+     Voorletters VARCHAR (10) NOT NULL , 
+     Tussenvoegsels VARCHAR (15) , 
+     Achternaam VARCHAR (&50) NOT NULL , 
+     Salaris NUMERIC (7,2) 
+    )
+GO
+
+ALTER TABLE DOCENT ADD CONSTRAINT DOCENT_PK PRIMARY KEY CLUSTERED (Code)
+     WITH (
+     ALLOW_PAGE_LOCKS = ON , 
+     ALLOW_ROW_LOCKS = ON )
+GO
+
+CREATE TABLE Docent_vak 
+    (
+     DOCENT_Code CHAR (5) NOT NULL , 
+     VAK_Code CHAR (3) NOT NULL 
+    )
+GO
+
+ALTER TABLE Docent_vak ADD CONSTRAINT Docent_vak_PK PRIMARY KEY CLUSTERED (DOCENT_Code, VAK_Code)
+     WITH (
+     ALLOW_PAGE_LOCKS = ON , 
+     ALLOW_ROW_LOCKS = ON )
+GO
+
+CREATE TABLE RESULTATEN 
+    (
+     Cijfer DECIMAL (3,1) NOT NULL , 
+     Toetsdatum DATETIME NOT NULL , 
+     STUDENT_Studentnummer CHAR (7) NOT NULL , 
+     TOETS_Code CHAR (5) NOT NULL , 
+     DOCENT_Code CHAR (5) NOT NULL 
+    )
+GO
+
+ALTER TABLE RESULTATEN ADD CONSTRAINT RESULTATEN_PK PRIMARY KEY CLUSTERED (STUDENT_Studentnummer, TOETS_Code)
+     WITH (
+     ALLOW_PAGE_LOCKS = ON , 
+     ALLOW_ROW_LOCKS = ON )
+GO
+
+CREATE TABLE STUDENT 
+    (
+     Studentnummer CHAR (7) NOT NULL , 
+     Voornaam VARCHAR NOT NULL , 
+     Tussenvoegsel VARCHAR (10) , 
+     Achternaam VARCHAR NOT NULL , 
+     Klas CHAR (5) , 
+     Crebonummer CHAR , 
+     GeboorteDatum DATE NOT NULL , 
+     DOCENT_Code CHAR (5) NOT NULL 
+    )
+GO
+
+ALTER TABLE STUDENT ADD CONSTRAINT STUDENT_PK PRIMARY KEY CLUSTERED (Studentnummer)
+     WITH (
+     ALLOW_PAGE_LOCKS = ON , 
+     ALLOW_ROW_LOCKS = ON )
+GO
+
+CREATE TABLE TOETS 
+    (
+     Code CHAR (5) NOT NULL , 
+     Toetsnaam VARCHAR (50) NOT NULL , 
+     VAK_Code CHAR (3) NOT NULL 
+    )
+GO
+
+ALTER TABLE TOETS ADD CONSTRAINT TOETS_PK PRIMARY KEY CLUSTERED (Code)
+     WITH (
+     ALLOW_PAGE_LOCKS = ON , 
+     ALLOW_ROW_LOCKS = ON )
+GO
+
+CREATE TABLE VAK 
+    (
+     Code CHAR (3) NOT NULL , 
+     Naamvak VARCHAR (10) NOT NULL 
+    )
+GO
+
+ALTER TABLE VAK ADD CONSTRAINT VAK_PK PRIMARY KEY CLUSTERED (Code)
+     WITH (
+     ALLOW_PAGE_LOCKS = ON , 
+     ALLOW_ROW_LOCKS = ON )
+GO
+
+ALTER TABLE Docent_vak 
+    ADD CONSTRAINT Docent_vak_DOCENT_FK FOREIGN KEY 
+    ( 
+     DOCENT_Code
+    ) 
+    REFERENCES DOCENT 
+    ( 
+     Code 
+    ) 
+    ON DELETE NO ACTION 
+    ON UPDATE NO ACTION 
+GO
+
+ALTER TABLE Docent_vak 
+    ADD CONSTRAINT Docent_vak_VAK_FK FOREIGN KEY 
+    ( 
+     VAK_Code
+    ) 
+    REFERENCES VAK 
+    ( 
+     Code 
+    ) 
+    ON DELETE NO ACTION 
+    ON UPDATE NO ACTION 
+GO
+
+ALTER TABLE RESULTATEN 
+    ADD CONSTRAINT RESULTATEN_DOCENT_FK FOREIGN KEY 
+    ( 
+     DOCENT_Code
+    ) 
+    REFERENCES DOCENT 
+    ( 
+     Code 
+    ) 
+    ON DELETE NO ACTION 
+    ON UPDATE NO ACTION 
+GO
+
+ALTER TABLE RESULTATEN 
+    ADD CONSTRAINT RESULTATEN_STUDENT_FK FOREIGN KEY 
+    ( 
+     STUDENT_Studentnummer
+    ) 
+    REFERENCES STUDENT 
+    ( 
+     Studentnummer 
+    ) 
+    ON DELETE NO ACTION 
+    ON UPDATE NO ACTION 
+GO
+
+ALTER TABLE RESULTATEN 
+    ADD CONSTRAINT RESULTATEN_TOETS_FK FOREIGN KEY 
+    ( 
+     TOETS_Code
+    ) 
+    REFERENCES TOETS 
+    ( 
+     Code 
+    ) 
+    ON DELETE NO ACTION 
+    ON UPDATE NO ACTION 
+GO
+
+ALTER TABLE STUDENT 
+    ADD CONSTRAINT STUDENT_DOCENT_FK FOREIGN KEY 
+    ( 
+     DOCENT_Code
+    ) 
+    REFERENCES DOCENT 
+    ( 
+     Code 
+    ) 
+    ON DELETE NO ACTION 
+    ON UPDATE NO ACTION 
+GO
+
+ALTER TABLE TOETS 
+    ADD CONSTRAINT TOETS_VAK_FK FOREIGN KEY 
+    ( 
+     VAK_Code
+    ) 
+    REFERENCES VAK 
+    ( 
+     Code 
+    ) 
+    ON DELETE NO ACTION 
+    ON UPDATE NO ACTION 
+GO

@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="Lesuitleg_Opdracht" id="65210804-1D14-FC31-4442-F6F3D0163DE8" version="3.5">
+<createdBy>gasthp</createdBy>
+<createdTime>2020-02-14 08:38:47 UTC</createdTime>
+<ownerDesignName>Lesuitleg_Opdracht</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>65210804-1D14-FC31-4442-F6F3D0163DE8</designId>
+</OSDM_Design>
