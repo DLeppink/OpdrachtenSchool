@@ -1,0 +1,23 @@
+Kennistoets 1.3: Taalcomponenten
+1:juist
+2:onjuist
+3:onjuist
+4:juist
+5:juist
+6:onjuist
+7:juist
+8:juist
+9:onjuist
+10:juist
+
+Kennistoets 1.4: Datatypen
+1: double
+2: ??
+3: 21.21
+4: 21
+5: ??
+6: Tarief:21.21
+7: Tarief wordt string "21.21"
+8: String
+9: 21.21
+10: 21.21
