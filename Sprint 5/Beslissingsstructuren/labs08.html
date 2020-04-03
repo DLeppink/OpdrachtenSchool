@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>lab8</title>
+</head>
+<body>
+    <script>
+        var vandaag = new Date();
+        var factuur = new Date();
+        var betaal = new Date();
+        document.write("Vandaag is " + vandaag.toLocaleDateString());
+
+        factuur.setDate(factuur.getDate() - 17);
+        factuurDatum = factuur.toLocaleDateString();
+        document.write("<br>Factuurdatum: " + factuurDatum);
+
+        betaal.setDate(betaal.getDate() + 12);
+        betaalDatum = betaal.toLocaleDateString();
+        document.write("<br>Betaaldatum: " + betaalDatum);
+
+        var timeDiff = Math.abs(vandaag.getTime() - betaal.getTime());
+        var betaalTijd = Math.ceil(timeDiff / (1000 * 3600 * 24));
+        document.write("<br>U hebt nog: " + betaalTijd + " dagen om te betalen");
+
+        if (betaal < vandaag)
+		{
+		alert = alert("Meld jezelf bij het incassobureau");
+		}
+		else
+		{
+		alert = alert("U hebt nog " + betaalTijd + " dagen om te betalen");
+		}
+    </script>
+</body>
+</html>
